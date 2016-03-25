@@ -152,4 +152,15 @@ Scp 192.168.1.3:/home/pi/.ssh/pi02
 
 Cat pi02 >> authorized_keys
 
+YOU MADE IT!!!!  Now just make a python script, copy it to the same directory on alll pis and wtach it fly
 
+EX:
+
+nano helloWorld.py
+	print 'hello world'
+	
+scp -r helloWorld.py IPADDRESSPI02:home/pi
+
+scp -r helloWorld.py IPADDRESSPI03:home/pi
+
+mpiexec -f machinefile -n 1 python helloWorld.py
